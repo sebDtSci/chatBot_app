@@ -26,7 +26,7 @@ jobs:
 
       - name: Build Windows executable
         run: |
-          pyinstaller --onefile interface.py
+          pyinstaller --onefile --hidden-import=ollama interface.py
         shell: bash
 
       - name: Upload Windows executable
@@ -54,7 +54,8 @@ jobs:
 
       - name: Build macOS executable
         run: |
-          pyinstaller --onefile interface.py
+          pyinstaller --onefile --hidden-import=ollama interface.py
+          
         shell: bash
 
       - name: Upload macOS executable
